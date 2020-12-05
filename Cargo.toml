@@ -1,7 +1,12 @@
 [package]
 name = "lc3-vm-rust"
-version = "0.1.0"
+version = "0.0.1"
+description = "An interpreter for Little Computer 3 (LC-3) programs"
+keywords = ["lc-3", "little computer 3", "interpreter"]
 authors = ["lonnen <chris.lonnen@gmail.com>"]
 edition = "2018"
+license = "MIT/Apache-2.0"
+repository = "https://github.com/lonnen/lc3-vm-rust"
+readme = "README.md"
 
 [dependencies]
