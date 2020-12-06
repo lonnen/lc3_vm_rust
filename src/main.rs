@@ -9,5 +9,6 @@ struct Options {
 }
 
 fn main() {
-    Options::from_args();
+    let opt = Options::from_args();
+    println!("{:?}", opt);
 }
