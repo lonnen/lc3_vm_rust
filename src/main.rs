@@ -1,7 +1,13 @@
-use std::env;
+use structopt::StructOpt;
 
 pub mod lc3;
 
+#[derive(StructOpt, Debug)]
+struct Options {
+    #[structopt(short, long)]
+    pub debug: bool,
+}
+
 fn main() {
-    lc3::execute(env::args());
+    Options::from_args();
 }
