@@ -10,3 +10,4 @@ repository = "https://github.com/lonnen/lc3-vm-rust"
 readme = "README.md"
 
 [dependencies]
+structopt = "0.3"
