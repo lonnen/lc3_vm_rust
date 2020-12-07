@@ -4,10 +4,7 @@ pub struct VM {
 }
 
 impl VM {
-
     pub fn new() -> VM {
-        VM { }
-
+        VM {}
     }
-
 }
