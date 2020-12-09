@@ -1,6 +1,6 @@
 use structopt::StructOpt;
 
-pub mod lc3;
+pub mod vm;
 
 #[derive(StructOpt, Debug)]
 struct Options {
