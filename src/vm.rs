@@ -11,3 +11,13 @@ impl VM {
         }
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn it_has_memory () {
+        let vm = VM::new();
+        assert_eq!(vm.memory[0], 0);
+    }
+}
