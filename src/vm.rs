@@ -1,28 +1,28 @@
 
 enum Registers {
     R0 = 0,
-    R1 = 1,
-    R2 = 2,
-    R3 = 3,
-    R4 = 4,
-    R5 = 5,
-    R6 = 6,
-    R7 = 7,
-    PC = 8, /* program counter */
-    COND = 9,
-    COUNT = 10,
+    R1,
+    R2,
+    R3,
+    R4,
+    R5,
+    R6,
+    R7,
+    PC, /* program counter */
+    COND,
+    COUNT,
 }
 
 pub struct VM {
     memory: [u16; u16::MAX as usize],
-    registers: [u16; 11],
+    registers: [u16; Registers::COUNT as usize],
 }
 
 impl VM {
     pub fn new() -> VM {
         VM {
             memory: [0; u16::MAX as usize],
-            registers: [0; 11],
+            registers: [0; Registers::COUNT as usize],
         }
     }
 }
