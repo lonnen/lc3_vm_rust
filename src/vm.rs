@@ -49,6 +49,5 @@ mod tests {
         assert_eq!(vm.registers[Registers::R7 as usize], 0);
         assert_eq!(vm.registers[Registers::PC as usize], 0);
         assert_eq!(vm.registers[Registers::COND as usize], 0);
-        assert_eq!(vm.registers[Registers::COUNT as usize], 0);
     }
 }
