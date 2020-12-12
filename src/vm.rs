@@ -13,6 +13,25 @@ enum Registers {
     COUNT,
 }
 
+pub enum Instruciton {
+    Branch,
+    Add,
+    Load,
+    Store,
+    JumpSubroutineInstruction,
+    And,
+    LoadRegister,
+    StoreRegister,
+    RTI, // unused?
+    Not,
+    LoadIndirect,
+    StoreIndirect,
+    Jump,
+    Reserved,
+    LoadEffectiveAddress,
+    Trap,
+}
+
 pub struct VM {
     memory: [u16; u16::MAX as usize],
     registers: [u16; Registers::COUNT as usize],
