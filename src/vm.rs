@@ -39,7 +39,25 @@ pub struct Flags {
 }
 
 impl Flags {
-
+    pub fn update(&mut self, reg: u16) {
+        match reg {
+            0x0000 => {
+                self.negative = false;
+                self.zero = true;
+                self.position = false;
+            }
+            0x0001..=0x7fff => {
+                self.negative = false;
+                self.zero = false;
+                self.position = true;
+            }
+            0x8000..=0xffff => {
+                self.negative = true;
+                self.zero = false;
+                self.position = false;
+            }
+        }
+    }
 }
 
 pub struct VM {
