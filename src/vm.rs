@@ -32,6 +32,16 @@ pub enum Instruciton {
     Trap,
 }
 
+pub struct Flags {
+    negative: bool,
+    zero: bool,
+    position: bool,
+}
+
+impl Flags {
+
+}
+
 pub struct VM {
     memory: [u16; u16::MAX as usize],
     registers: [u16; Registers::COUNT as usize],
