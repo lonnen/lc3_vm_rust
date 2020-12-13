@@ -72,6 +72,21 @@ impl VM {
             registers: [0; Registers::COUNT as usize],
         }
     }
+
+    pub fn run(&mut self) {
+        // load arguments
+        // setup
+
+        // set to starting Position
+
+        // running {
+            // fetch instruction
+            // switch on instruction
+
+        //}
+
+        // shutdown
+    }
 }
 
 #[cfg(test)]
