@@ -35,8 +35,7 @@ pub enum Instruciton {
 pub struct Flags {
     negative: bool,
     zero: bool,
-    position: bool,
-    running: bool,
+    positive: bool,
 }
 
 impl Flags {
@@ -45,17 +44,17 @@ impl Flags {
             0x0000 => {
                 self.negative = false;
                 self.zero = true;
-                self.position = false;
+                self.positive = false;
             }
             0x0001..=0x7fff => {
                 self.negative = false;
                 self.zero = false;
-                self.position = true;
+                self.positive = true;
             }
             0x8000..=0xffff => {
                 self.negative = true;
                 self.zero = false;
-                self.position = false;
+                self.positive = false;
             }
         }
     }
