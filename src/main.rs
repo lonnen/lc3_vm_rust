@@ -2,6 +2,8 @@ use structopt::StructOpt;
 
 pub mod vm;
 
+mod flags;
+
 #[derive(StructOpt, Debug)]
 struct Options {
     #[structopt(short, long)]
