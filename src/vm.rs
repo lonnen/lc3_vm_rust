@@ -36,6 +36,7 @@ pub struct Flags {
     negative: bool,
     zero: bool,
     position: bool,
+    running: bool,
 }
 
 impl Flags {
@@ -63,6 +64,7 @@ impl Flags {
 pub struct VM {
     memory: [u16; u16::MAX as usize],
     registers: [u16; Registers::COUNT as usize],
+    running: bool,
 }
 
 impl VM {
@@ -70,6 +72,7 @@ impl VM {
         VM {
             memory: [0; u16::MAX as usize],
             registers: [0; Registers::COUNT as usize],
+            running: false
         }
     }
 
@@ -79,13 +82,13 @@ impl VM {
 
         // set to starting Position
 
-        // running {
+        while self.running {
             // fetch instruction
             // switch on instruction
-
-        //}
+        }
 
         // shutdown
+
     }
 }
 
