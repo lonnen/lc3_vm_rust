@@ -33,6 +33,10 @@ pub enum Instruciton {
     Trap,
 }
 
+fn mem_read(addr: u16) -> u16 {
+    0x3000
+}
+
 pub struct VM {
     memory: [u16; u16::MAX as usize],
     registers: [u16; Registers::COUNT as usize],
@@ -52,10 +56,14 @@ impl VM {
         // load arguments
         // setup
 
+        let pc_start = 0x3000;
+        self.registers[Registers::PC as usize] = pc_start;
+
         // set to starting Position
 
         while self.running {
-            // fetch instruction
+
+            let instruction = mem_read(self.registers[Registers::PC as usize]);
             // switch on instruction
         }
 
