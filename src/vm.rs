@@ -34,7 +34,7 @@ pub enum Instruciton {
 }
 
 fn mem_read(addr: u16) -> u16 {
-    0x3000
+    0x3000 // magic number. This will always return the start register
 }
 
 pub struct VM {
