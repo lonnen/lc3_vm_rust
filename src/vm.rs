@@ -34,7 +34,8 @@ pub enum Instruciton {
 }
 
 fn mem_read(addr: u16) -> u16 {
-    0x3000 // magic number. This will always return the start register
+    // read from memory (you're gonna need that) and parse it to an instruction
+    0 // magic number. should be an instruction (above)
 }
 
 pub struct VM {
@@ -64,7 +65,12 @@ impl VM {
         while self.running {
 
             let instruction = mem_read(self.registers[Registers::PC as usize]);
+            self.registers[Registers::PC as usize] += 1;
             // switch on instruction
+
+            match instruction {
+                _ => println!("I'm running!")
+            }
         }
 
         // shutdown
