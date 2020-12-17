@@ -14,7 +14,7 @@ enum Registers {
     COUNT,
 }
 
-pub enum Instruciton {
+pub enum Instruction {
     Branch,
     Add,
     Load,
