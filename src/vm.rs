@@ -64,11 +64,28 @@ impl VM {
 
         while self.running {
 
-            let instruction = mem_read(self.registers[Registers::PC as usize]);
+            let opcode = mem_read(self.registers[Registers::PC as usize]);
             self.registers[Registers::PC as usize] += 1;
             // switch on instruction
 
+            let instruction: Instruction= Instruction::Branch;
             match instruction {
+                Instruction::Branch => {},
+                Instruction::Add => {},
+                Instruction::Load => {},
+                Instruction::Store => {},
+                Instruction::JumpSubroutineInstruction => {},
+                Instruction::And => {},
+                Instruction::LoadRegister => {},
+                Instruction::StoreRegister => {},
+                Instruction::RTI => {}, // unused?
+                Instruction::Not => {},
+                Instruction::LoadIndirect => {},
+                Instruction::StoreIndirect => {},
+                Instruction::Jump => {},
+                Instruction::Reserved => {},
+                Instruction::LoadEffectiveAddress => {},
+                Instruction::Trap => {},
                 _ => println!("I'm running!")
             }
         }
