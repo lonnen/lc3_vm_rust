@@ -1,6 +1,5 @@
 use std::path::PathBuf;
 
-
 pub(crate) enum Source {
     Stdin,
     Files(Vec<PathBuf>),
