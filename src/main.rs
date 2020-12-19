@@ -1,7 +1,7 @@
 use structopt::StructOpt;
 
-pub mod vm;
-
+mod vm;
+mod flags;
 mod input;
 
 #[derive(StructOpt, Debug)]
