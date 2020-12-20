@@ -14,3 +14,16 @@ impl Source {
         }
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_empty_source() {
+        match Source::infer(vec![]) {
+            Source::Stdin => assert!(true),
+            _ => assert!(false),
+        }
+    }
+}
