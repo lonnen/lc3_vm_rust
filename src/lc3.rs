@@ -1,17 +1,17 @@
 use std::env::Args;
 
 enum Registers {
-        R0 = 0,
-        R1,
-        R2,
-        R3,
-        R4,
-        R5,
-        R6,
-        R7,
-        PC,     // program counter
-        COND,   // condition flag (see Conditions)
-        COUNT,  // number of registers
+    R0 = 0,
+    R1,
+    R2,
+    R3,
+    R4,
+    R5,
+    R6,
+    R7,
+    PC,    // program counter
+    COND,  // condition flag (see Conditions)
+    COUNT, // number of registers
 }
 
 enum Opcodes {
@@ -42,7 +42,6 @@ enum Conditions {
     NEG = 1 << 2,
 }
 
-
 /* `execute` fn executes commandline arguments
  */
 pub fn execute(mut args: Args) {
@@ -56,5 +55,4 @@ pub fn execute(mut args: Args) {
     while running != 0 {
         running = running - 1;
     }
-
 }
