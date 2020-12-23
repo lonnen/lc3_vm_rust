@@ -1,8 +1,8 @@
 use structopt::StructOpt;
 
-mod vm;
 mod flags;
 mod input;
+mod vm;
 
 #[derive(StructOpt, Debug)]
 struct Options {
