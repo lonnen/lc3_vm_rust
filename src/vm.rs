@@ -49,7 +49,7 @@ impl VM {
         VM {
             memory: [0; u16::MAX as usize],
             registers: [0; Registers::COUNT as usize],
-            running: false
+            running: false,
         }
     }
 
@@ -63,35 +63,33 @@ impl VM {
         // set to starting Position
 
         while self.running {
-
             let opcode = mem_read(self.registers[Registers::PC as usize]);
             self.registers[Registers::PC as usize] += 1;
             // switch on instruction
 
-            let instruction: Instruction= Instruction::Branch;
+            let instruction: Instruction = Instruction::Branch;
             match instruction {
-                Instruction::Branch => {},
-                Instruction::Add => {},
-                Instruction::Load => {},
-                Instruction::Store => {},
-                Instruction::JumpSubroutineInstruction => {},
-                Instruction::And => {},
-                Instruction::LoadRegister => {},
-                Instruction::StoreRegister => {},
-                Instruction::RTI => {}, // unused?
-                Instruction::Not => {},
-                Instruction::LoadIndirect => {},
-                Instruction::StoreIndirect => {},
-                Instruction::Jump => {},
-                Instruction::Reserved => {},
-                Instruction::LoadEffectiveAddress => {},
-                Instruction::Trap => {},
-                _ => println!("I'm running!")
+                Instruction::Branch => {}
+                Instruction::Add => {}
+                Instruction::Load => {}
+                Instruction::Store => {}
+                Instruction::JumpSubroutineInstruction => {}
+                Instruction::And => {}
+                Instruction::LoadRegister => {}
+                Instruction::StoreRegister => {}
+                Instruction::RTI => {} // unused?
+                Instruction::Not => {}
+                Instruction::LoadIndirect => {}
+                Instruction::StoreIndirect => {}
+                Instruction::Jump => {}
+                Instruction::Reserved => {}
+                Instruction::LoadEffectiveAddress => {}
+                Instruction::Trap => {}
+                _ => println!("I'm running!"),
             }
         }
 
         // shutdown
-
     }
 }
 
@@ -99,13 +97,13 @@ impl VM {
 mod tests {
     use super::*;
     #[test]
-    fn it_has_memory () {
+    fn it_has_memory() {
         let vm = VM::new();
         assert_eq!(vm.memory[0], 0);
     }
 
     #[test]
-    fn it_has_registers () {
+    fn it_has_registers() {
         let vm = VM::new();
         assert_eq!(vm.registers[Registers::R0 as usize], 0);
         assert_eq!(vm.registers[Registers::R1 as usize], 0);
