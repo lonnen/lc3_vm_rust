@@ -4,6 +4,9 @@ mod flags;
 mod input;
 mod vm;
 
+pub(crate) use self::input::Source;
+pub(crate) use self::vm::VM;
+
 #[derive(StructOpt, Debug)]
 struct Options {
     #[structopt(short, long)]
@@ -15,5 +18,7 @@ struct Options {
 
 fn main() {
     let opt = Options::from_args();
-    println!("{:?}", opt);
+    let source = Source::infer(opt.files);
+    let vm = VM::new(); // this will need arguments and whatnot soon
+    // vm.rum(&source);
 }
