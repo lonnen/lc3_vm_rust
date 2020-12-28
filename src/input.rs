@@ -1,6 +1,4 @@
 use std::path::PathBuf;
-use std::io::prelude::*;
-use std::fs::File;
 
 use crate::error::Result;
 
@@ -17,6 +15,10 @@ impl Source {
             Source::Files(file_paths)
         }
     }
+}
+
+pub(crate) fn read_image(path: &PathBuf) -> Result<()> {
+    Ok(())
 }
 
 #[cfg(test)]

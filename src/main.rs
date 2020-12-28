@@ -6,7 +6,7 @@ mod input;
 mod vm;
 
 pub(crate) use error::Result;
-pub(crate) use self::input::Source;
+pub(crate) use self::input::{Source, read_image};
 pub(crate) use self::vm::VM;
 
 #[derive(StructOpt, Debug)]
@@ -26,7 +26,7 @@ fn main() -> Result<()>{
         Source::Stdin => {},
         Source::Files(paths) => {
             paths.iter().for_each(|path| {
-                read_image(path)
+                read_image(path);
             })
         }
     }
