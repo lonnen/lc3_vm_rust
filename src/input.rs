@@ -1,4 +1,8 @@
 use std::path::PathBuf;
+use std::io::prelude::*;
+use std::fs::File;
+
+use crate::error::Result;
 
 pub(crate) enum Source {
     Stdin,
@@ -13,6 +17,12 @@ impl Source {
             Source::Files(file_paths)
         }
     }
+}
+
+pub(crate) fn check_not_empty(mut file: File) -> Result<()> {
+    let mut buf: [u8; 1] = Default::default();
+    file.read_exact(&mut buf)?;
+    Ok(())
 }
 
 #[cfg(test)]

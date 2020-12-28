@@ -1,6 +1,7 @@
 #[derive(thiserror::Error)]
 pub enum Error {
-
+    #[error(transparent)]
+    File(#[from] std::io::Error),
 }
 
 impl std::fmt::Debug for Error {
