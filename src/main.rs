@@ -22,6 +22,13 @@ fn main() -> Result<()>{
     let opt = Options::from_args();
     let source = Source::infer(opt.files);
     let vm = VM::new(); // this will need arguments and whatnot soon
-    // vm.rum(&source);
+    match source {
+        Source::Stdin => {},
+        Source::Files(paths) => {
+            paths.iter().for_each(|path| {
+                read_image(path)
+            })
+        }
+    }
     Ok(())
 }
