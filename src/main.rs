@@ -23,7 +23,9 @@ fn main() -> Result<()>{
     let source = Source::infer(opt.files);
     let vm = VM::new(); // this will need arguments and whatnot soon
     match source {
-        Source::Stdin => {},
+        Source::Stdin => {
+            unimplemented!("Stdin is not yet supported");
+        },
         Source::Files(paths) => {
             paths.iter().for_each(|path| {
                 read_image(path);
